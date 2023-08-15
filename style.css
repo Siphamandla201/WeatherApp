@@ -78,7 +78,7 @@ h1, h3 {
 .panel {
     position: absolute;
     width: 40%;
-    height: 90%;
+    height: 100%;
     top: 0;
     right: 0;
     background: rgba(110, 110, 110, 0.25);
