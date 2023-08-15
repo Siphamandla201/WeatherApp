@@ -78,7 +78,7 @@ h1, h3 {
 .panel {
     position: absolute;
     width: 40%;
-    height: 100%;
+    height: 90%;
     top: 0;
     right: 0;
     background: rgba(110, 110, 110, 0.25);
@@ -96,8 +96,8 @@ h1, h3 {
 
 .submit {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 17.2px; /* Adjusted value */
+    right: 20px;
     padding: 1em;
     margin: 0;
     border: none;
@@ -119,7 +119,7 @@ h1, h3 {
     border: none;
     border-bottom: 1px #ccc solid;
     padding: 0 1em 0.5em 0;
-    width: 80%;
+    width: 92%;
     color: #fff;
     font-size: 1.1em;
 }
