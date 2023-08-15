@@ -170,7 +170,7 @@ h1, h3 {
     /* overflow-x: scroll; */
 }
 
-.week-forecast .weekdays .days-weather {
+days-weather {
     display: flex;
     flex-direction: column;
     justify-content: center;

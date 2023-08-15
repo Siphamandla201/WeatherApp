@@ -41,37 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function dayOfTheWeek(day, month, year) {
         const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const date = new Date(year, month - 1, day); // Adjust month to 0-based index
-        return weekday[date.getDay()];
+        return weekday[new Date(`${day}/${month}/${year}`).getDay()];
     }
-    
-    function displayWeeklyForecast(weeklyData) {
-        const weekForecastContainer = document.querySelector(".weekdays");
-    
-        // Clear any existing forecast content
-        weekForecastContainer.innerHTML = "";
-    
-        // Iterate through daily forecast data and update HTML
-        weeklyData.forecast.forecastday.forEach(dayData => {
-            const dayOfWeek = dayData.date;
-            const date = new Date(dayOfWeek);
-            const dayName = dayOfTheWeek(date.getDay(), date.getMonth() + 1, date.getFullYear());
-            const iconUrl = dayData.day.condition.icon;
-            const tempCelsius = dayData.day.avgtemp_c;
-    
-            const dayForecast = document.createElement("div");
-            dayForecast.innerHTML = `
-                <div class="days-weather">
-                    <span class="day">${dayName}</span>
-                    <img src="${iconUrl}" class="icon" alt="icon" height="50px" width="50px">
-                    <span class="days-temp">${tempCelsius}&#176;</span>
-                </div>
-            `;
-    
-            weekForecastContainer.appendChild(dayForecast);
-        });
-    }
-    
     
     function fetchWeatherData() {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -126,6 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 .catch(error => {
                     console.error("Error fetching weekly forecast:", error);
                 });
+            })
+            .catch(error => {
+                console.error("Error fetching current weather data:", error);
+            });
         })
         .catch(error => {
             console.error("Error fetching weather data:", error);

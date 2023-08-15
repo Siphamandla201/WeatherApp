@@ -162,7 +162,7 @@ h1, h3 {
     align-items: center;
 }
 
-.week-forecast .weekdays {
+.weekdays {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -170,11 +170,9 @@ h1, h3 {
     /* overflow-x: scroll; */
 }
 
-.week-forecast .weekdays .days-weather {
+.week-forecast div .days-weather {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 @media screen and (max-width: 800px) {

@@ -41,36 +41,35 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function dayOfTheWeek(day, month, year) {
         const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const date = new Date(year, month - 1, day); // Adjust month to 0-based index
-        return weekday[date.getDay()];
+        return weekday[new Date(`${day}/${month}/${year}`).getDay()];
     }
     
-    function displayWeeklyForecast(weeklyData) {
-        const weekForecastContainer = document.querySelector(".weekdays");
+    // function displayWeeklyForecast(weeklyData) {
+    //     const weekForecastContainer = document.querySelector(".week-forecast");
     
-        // Clear any existing forecast content
-        weekForecastContainer.innerHTML = "";
+    //     // Clear any existing forecast content
+    //     weekForecastContainer.innerHTML = "";
     
-        // Iterate through daily forecast data and update HTML
-        weeklyData.forecast.forecastday.forEach(dayData => {
-            const dayOfWeek = dayData.date;
-            const date = new Date(dayOfWeek);
-            const dayName = dayOfTheWeek(date.getDay(), date.getMonth() + 1, date.getFullYear());
-            const iconUrl = dayData.day.condition.icon;
-            const tempCelsius = dayData.day.avgtemp_c;
+    //     // Iterate through daily forecast data and update HTML
+    //     weeklyData.forecast.forecastday.forEach(dayData => {
+    //         const dayOfWeek = dayData.date;
+    //         const dayName = dayOfTheWeek(new Date(dayOfWeek).getDay());
+    //         const iconUrl = dayData.day.condition.icon;
+    //         const tempCelsius = dayData.day.avgtemp_c;
     
-            const dayForecast = document.createElement("div");
-            dayForecast.innerHTML = `
-                <div class="days-weather">
-                    <span class="day">${dayName}</span>
-                    <img src="${iconUrl}" class="icon" alt="icon" height="50px" width="50px">
-                    <span class="days-temp">${tempCelsius}&#176;</span>
-                </div>
-            `;
+    //         const dayForecast = document.createElement("div");
+    //         dayForecast.classList.add("weekdays");
+    //         dayForecast.innerHTML = `
+    //             <div class="days-weather">
+    //                 <span class="day">${dayName}</span>
+    //                 <img src="${iconUrl}" class="icon" alt="icon" height="50px" width="50px">
+    //                 <span class="days-temp">${tempCelsius}&#176;</span>
+    //             </div>
+    //         `;
     
-            weekForecastContainer.appendChild(dayForecast);
-        });
-    }
+    //         weekForecastContainer.appendChild(dayForecast);
+    //     });
+    // }
     
     
     function fetchWeatherData() {

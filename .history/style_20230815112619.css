@@ -15,7 +15,7 @@ h1, h3 {
 
 .weather-app {
     min-height: 100vh;
-    background-image: url(./images/day/clear.jpg);
+    background-image: url(./images/day/michael-diane-weidner-h-rP5KSC2W0-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -162,20 +162,6 @@ h1, h3 {
     align-items: center;
 }
 
-.week-forecast .weekdays {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    /* overflow-x: scroll; */
-}
-
-.week-forecast .weekdays .days-weather {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 @media screen and (max-width: 800px) {
     .panel, .container {

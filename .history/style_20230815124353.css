@@ -173,7 +173,7 @@ h1, h3 {
 .week-forecast .weekdays .days-weather {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 

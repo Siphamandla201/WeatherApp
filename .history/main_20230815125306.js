@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function dayOfTheWeek(day, month, year) {
         const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const date = new Date(year, month - 1, day); // Adjust month to 0-based index
-        return weekday[date.getDay()];
+        return weekday[new Date(`${day}/${month}/${year}`).getDay()];
     }
     
     function displayWeeklyForecast(weeklyData) {
@@ -54,12 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Iterate through daily forecast data and update HTML
         weeklyData.forecast.forecastday.forEach(dayData => {
             const dayOfWeek = dayData.date;
-            const date = new Date(dayOfWeek);
-            const dayName = dayOfTheWeek(date.getDay(), date.getMonth() + 1, date.getFullYear());
+            const dayName = dayOfTheWeek(new Date(dayOfWeek).getDay());
             const iconUrl = dayData.day.condition.icon;
             const tempCelsius = dayData.day.avgtemp_c;
     
             const dayForecast = document.createElement("div");
+            dayForecast.classList.add("week-forecast weekdays days-weather");
             dayForecast.innerHTML = `
                 <div class="days-weather">
                     <span class="day">${dayName}</span>

@@ -173,8 +173,7 @@ h1, h3 {
 .week-forecast .weekdays .days-weather {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 @media screen and (max-width: 800px) {

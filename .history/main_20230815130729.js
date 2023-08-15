@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const dayForecast = document.createElement("div");
             dayForecast.innerHTML = `
                 <div class="days-weather">
-                    <span class="day">${dayName}</span>
+                    <span class="day">${dayName} ${date.getDate()}</span>
                     <img src="${iconUrl}" class="icon" alt="icon" height="50px" width="50px">
                     <span class="days-temp">${tempCelsius}&#176;</span>
                 </div>

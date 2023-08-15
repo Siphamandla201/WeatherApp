@@ -54,15 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Iterate through daily forecast data and update HTML
         weeklyData.forecast.forecastday.forEach(dayData => {
             const dayOfWeek = dayData.date;
-            const date = new Date(dayOfWeek);
-            const dayName = dayOfTheWeek(date.getDay(), date.getMonth() + 1, date.getFullYear());
+            const dayName = dayOfTheWeek(date.getDay());
             const iconUrl = dayData.day.condition.icon;
             const tempCelsius = dayData.day.avgtemp_c;
     
             const dayForecast = document.createElement("div");
             dayForecast.innerHTML = `
                 <div class="days-weather">
-                    <span class="day">${dayName}</span>
+                    <span class="day">${d}</span>
                     <img src="${iconUrl}" class="icon" alt="icon" height="50px" width="50px">
                     <span class="days-temp">${tempCelsius}&#176;</span>
                 </div>
