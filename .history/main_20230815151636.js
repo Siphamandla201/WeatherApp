@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 app.style.backgroundSize = "100% 100%";
             } else if (code == 1003 || code == 1006 || code == 1009 || code == 1030 || code == 1069 || code == 1087 || code == 1135 || code == 1273 || code == 1279 || code == 1282) {
                 app.style.backgroundImage = `url(./images/${timeOfDay}/cloudy.jpg)`;
-                app.style.backgroundSize = "100% 100%";
             }
             
             app.style.opacity = "1";

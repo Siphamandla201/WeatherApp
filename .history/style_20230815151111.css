@@ -14,11 +14,11 @@ h1, h3 {
 }
 
 .weather-app {
-    min-height: 100vh;
-    background-image: url(./images/day/cloudy.jpg);
+    min-height: auto;
+    background-image: url(./images/day/clear.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 100;
     color: #fff;
     position: relative;
     transition: 500ms;

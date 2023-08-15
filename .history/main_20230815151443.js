@@ -110,10 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (code == 1000) {
                 app.style.background = `url(./images/${timeOfDay}/clear.jpg)`;
-                app.style.backgroundSize = "100% 100%";
             } else if (code == 1003 || code == 1006 || code == 1009 || code == 1030 || code == 1069 || code == 1087 || code == 1135 || code == 1273 || code == 1279 || code == 1282) {
                 app.style.backgroundImage = `url(./images/${timeOfDay}/cloudy.jpg)`;
-                app.style.backgroundSize = "100% 100%";
             }
             
             app.style.opacity = "1";
@@ -133,7 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error fetching weather data:", error);
             alert("City not found, please try again");
             app.style.opacity = "1";
-            app.style.backgroundSize = "100% 100%";
+            app.style.background-size
+            : 100% 100%;
         });
     }
     
